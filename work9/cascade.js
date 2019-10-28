@@ -1,5 +1,5 @@
-  let college=['电子与通信学院', '先进制造学院', '电气技术学院', '汽车学院', '计算机与设计学院', '外语商务学院', '经济贸易学院', '物流学院', '马克思主义学院']
-  let  majors = [
+let colleges = ['电子与通信学院', '先进制造学院', '电气技术学院', '汽车学院', '计算机与设计学院', '外语商务学院', '经济贸易学院', '物流学院', '马克思主义学院']
+let majors = [
     ['电子', '电信', '通信', '嵌入', '物联'],
     ['数控', '模具', '机设', '机自'],
     ['机电', '电气', '建电', '建智', '空调', '光电', '机器人'],
@@ -72,29 +72,35 @@ let classes = [
     ],[
         ['社工1801']
     ]
-]        
-function createOption(obj, data){
-    for ( var i in data){
-        var op = new Option(data[i], i)
+]
+
+function createOption(obj,data) {
+    for (var i in data){
+        var op =new Option(data[i],i)
         obj.options.add(op)
     }
 }
-var collegeSelect = document.getElementById('collegeSelect')
-createOption(collegeSelect,college)
 
-var majorSelect = document.getElementById('majorSelect')
-collegeSelect.onchange = function(){
+var collegeSelect =document.getElementById('collegeSelect')
+createOption(collegeSelect,colleges)
+
+var majorSelect =document.getElementById('majorSelect')
+collegeSelect.onchange =function () {
     majorSelect.options.length = 0
     createOption(majorSelect,majors[collegeSelect.value])
 }
 
-var classSelect = document.getElementById('classSelect')
-majorSelect.onchange = function(){
+var classSelect =document.getElementById('classSelect')
+majorSelect.onchange =function () {
     classSelect.options.length = 0
     createOption(classSelect,classes[collegeSelect.value][majorSelect.value])
 }
-if(collegeSelect.value >=0) {
-    classSelect.onchange()
-}else{
-    majorSelect.options.length = 0
+collegeSelect.onchange =function () {
+    majorSelect.options.length = 0  
+    createOption(majorSelect,majors[collegeSelect.value])
+    if(collegeSelect.value>=0)  {
+        majorSelect.onchange()
+    }else{
+        classSelect.options.length = 0
+    }
 }
