@@ -72,8 +72,7 @@ let classes = [
     ],[
         ['社工1801']
     ]
-]
-              
+]        
 function createOption(obj, data){
     for ( var i in data){
         var op = new Option(data[i], i)
