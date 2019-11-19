@@ -6,7 +6,8 @@ function monkey() {
     if(isNaN(total)||isNaN(kick)){
         alert('请输入数字')
         return
-    }
+    }           
+    
     let monkey=[]
     for (let i=1;i<=total;i++ ){
         monkey.push(i)
