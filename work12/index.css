@@ -16,7 +16,7 @@ body {
     width: 720px;
 }
 .title{
-    background: #ccc;
+    background: #cccccc;
 }
 table{
     height: 169px;
@@ -26,4 +26,7 @@ table{
     float:left;
     margin: 10px;
     font-family:arial;
+}
+th{
+    background: rgb(177, 78, 78);
 }
