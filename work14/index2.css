@@ -1,21 +1,21 @@
-.box {
+.box{
     margin: 0 auto;
     position: relative;
-    background: url(ms.jpg);
+    background: url(ms1.jpg);
     background-size: cover;
-    width: 702px;
-    height: 408px;
+    width: 600px;
+    height: 345px;
 }
 
 .box div{
     float: left;
     width: 50px;
     height: 50px;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(226, 179, 179);
     margin-left: 5px;
     line-height: 50px;
     text-align: center;
-    color: rgb(45, 30, 112);
+    color: rgb(19, 15, 15);
     position: relative;
     top: 328px;
     left: 350px;
