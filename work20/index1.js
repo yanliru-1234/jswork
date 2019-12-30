@@ -10,3 +10,4 @@ $('#toAllRight').click(function () {
 $('#toAllLeft').click(function () {
     $('#left>select').append($('#right>select>option'));
 });
+ 

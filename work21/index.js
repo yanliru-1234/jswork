@@ -1,6 +1,6 @@
 $(function () {
     var i = 0;
-    var time = null;
+    var timer = null;
     var delay = 1000;
     var width = 1420;
     var speed = 400;
@@ -12,25 +12,29 @@ $(function () {
     }, function () {
         timer = setInterval(imgChange, delay);
     });
-    $('.dot li').mouseover(function () {
+
+    $('.dot li').monseover(function () {
         i = $(this).index();
         $('.hot').stop().animate({
             left: -i * width
         }, 200);
         dotChange();
     });
+
     $('.banner').hover(function () {
         $('.arrow').show();
-    }, function () {
+    },function () {
         $('.arrow').hide();
     });
+
     $('.next').click(function () {
-        imgChange()
+        imgChange();
     });
+
     $('.prev').click(function () {
         --i;
         if (i == -1) {
-            i = $('.hot li').length -2;
+            i = $('.hot li').length - 2;
             $('.hot').css({
                 left: -($('.hot li').length - 1) * width
             });
@@ -40,12 +44,14 @@ $(function () {
         }, speed);
         dotChange();
     });
-    function imgChange() {
+
+    function imgChange(){
         ++i;
         isCrack();
         dotChange();
     }
-    function isCrack() {
+
+    function isCrack(){
         if (i == $('.hot li').length) {
             i = 1;
             $('.hot').css({
@@ -56,11 +62,12 @@ $(function () {
             left: -i * width
         }, speed);
     }
-   function dotChange() {
-       if (i == $('.hot li').length - 1){
-           $('.dot li').eq(0).addClass('on').siblings().removeClass('on');
-       } else {
-           $('.dot li').eq(i).addClass('on').siblings().removeClass('on');
-       }
-   }
-});
+
+    function dotChange(){
+        if (i == $('.hot li').length - 1) {
+            $('.dot li').eq(0).addClass('on').siblings().removeClass('on');
+        }else{
+            $('.dot li').eq(i).addClass('on').siblings().removeClass('on');
+        }
+    }
+})
