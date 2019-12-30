@@ -76,7 +76,7 @@ const openDefaultBrowser = function (url) {
             break;
         case "win32":
             exec('start '+ url);
-            break;
+            break;      
         default:
             exec('xdg-open', [url]);
     }
