@@ -26,13 +26,6 @@ app.post('/upload',upload.single('file'),function(req,res,next){
     console.log("file name is"+file.filename);
     res.json('/'+file.filename);
 })
-
-
-
-
-
-
-
 app.post('/formBuilder', function (req, res) {
     console.log(req.body)
     res.send(req.body)
@@ -76,7 +69,7 @@ const openDefaultBrowser = function (url) {
             break;
         case "win32":
             exec('start '+ url);
-            break;      
+            break;
         default:
             exec('xdg-open', [url]);
     }
